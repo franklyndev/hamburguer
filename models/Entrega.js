@@ -35,4 +35,5 @@ Entrega.init(
   }
 );
 
+
 export default Entrega;

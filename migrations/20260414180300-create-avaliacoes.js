@@ -36,6 +36,7 @@ export default {
       }
     });
   },
+  
   async down(queryInterface, Sequelize) {
     await queryInterface.dropTable('avaliacoes');
   }
