@@ -37,7 +37,7 @@ Pedido.init(
     }
   },
   {
-    sequelize, // 🔥 ESSA LINHA RESOLVE O ERRO
+    sequelize,
     tableName: 'pedidos',
     timestamps: true,
     paranoid: true

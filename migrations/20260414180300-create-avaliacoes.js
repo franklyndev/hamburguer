@@ -13,7 +13,7 @@ export default {
         type: Sequelize.INTEGER,
         allowNull: false,
         references: {
-          model: 'pedidos', // tabela que você já criou
+          model: 'pedidos', 
           key: 'id'
         },
         onUpdate: 'CASCADE',
