@@ -39,3 +39,4 @@ module.exports = (sequelize, DataTypes) => {
 
   return avaliacao;
 };
+export default Avaliacao;
