@@ -32,10 +32,10 @@ module.exports = (sequelize, DataTypes) => {
     }
   }, {
     sequelize,
-    modelName: 'Avaliacao',
+    modelName: 'avaliacao',
     tableName: 'avaliacoes',
     timestamps: true
   });
 
-  return Avaliacao;
+  return avaliacao;
 };
