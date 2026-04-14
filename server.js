@@ -18,5 +18,5 @@ app.use('/categoria', categoriaRoutes);
 app.use('/avaliacao', avaliacaoRoutes);
 
 app.listen(3000, () => {
-  console.log('Servidor rodando na porta 3000');
+  console.log('Funcionando, tudo nos conformes...');
 });
