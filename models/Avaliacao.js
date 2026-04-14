@@ -1,42 +1,41 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
+import { Model, DataTypes } from 'sequelize';
 
-module.exports = (sequelize, DataTypes) => {
-  class Avaliacao extends Model {
-    static associate(models) {
-      Avaliacao.belongsTo(models.Pedido, {
-        foreignKey: 'pedido_id',
-        as: 'pedido'
-      });
-    }
+class Avaliacao extends Model {
+  static associate(models) {
+    Avaliacao.belongsTo(models.Pedido, {
+      foreignKey: 'pedido_id',
+      as: 'pedido'
+    });
   }
+}
 
-  Avaliacao.init({
-    id: {
-      type: DataTypes.INTEGER,
-      primaryKey: true,
-      autoIncrement: true
+export default (sequelize) => {
+  Avaliacao.init(
+    {
+      id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true
+      },
+      pedido_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+      },
+      nota: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+      },
+      comentario: {
+        type: DataTypes.STRING
+      }
     },
-    pedido_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false
-    },
-    nota: {
-      type: DataTypes.INTEGER,
-      allowNull: false
-    },
-    comentario: {
-      type: DataTypes.STRING
+    {
+      sequelize,
+      modelName: 'Avaliacao',
+      tableName: 'avaliacoes',
+      timestamps: true
     }
-  }, {
-    sequelize,
-    modelName: 'avaliacao',
-    tableName: 'avaliacoes',
-    timestamps: true
-  });
+  );
 
-  return avaliacao;
+  return Avaliacao;
 };
-export default Avaliacao;
